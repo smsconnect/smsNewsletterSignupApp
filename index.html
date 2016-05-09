@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>Newsletter Sign Up Form</title>
+    <link rel="stylesheet" type="text/css" href="usa_assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="css\main.css">
+
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="usa_assets/js/components.js"></script>
+    <script src="js/parsleyjs/dist/parsley.min.js"></script>
+    <script src="js/dps_api/dpsHTMLGestureAPI.min.js"></script>
+    <script src="js/dps_api/api.js"></script>
+    <script src="js/back.js"></script>
+  </head>
+
+  <?php
+    include 'assets/includes/person_insert.php';
+  ?>
+
+  <body>
+
+    <img class="background-image" src="assets/white background subtler.png"/>
+
+    <div class="navigation">
+      <div class="navigation_back-button">
+        <p>BACK</p>
+      </div>
+    </div>
+
+
+    <div class="top">
+      <h1>Newsletter Sign Up Form</h1>
+      <p><!--<h3 class="intro intro--light">-->Are you interested in learning more about the School of Media  Sciences or the Media Arts and Technology Major?<!--</h3>--></p>
+      <p><!--<h3 class="intro intro--heavy">-->Fill out the form below to receive more information!<!--</h3>--></p>
+    </div>
+
+    <div class="container">
+
+
+      <form action="" method="POST" id="form" data-parsley-validate>
+        <fieldset>
+          <legend>Current Status</legend>
+          <label for="interest">I am currently a:<span class="usa-additional_text">Required</span></label>
+          <select name="type" id="interest" minlength="1" data-parsley-trigger="focusout" required>
+            <option value="">Select...</option>
+            <option value="undergraduate">High School Student</option>
+            <option value="graduate">Prospective Graduate Student</option>
+            <option value="transfer">Prospective Transfer Student</option>
+            <option value="teacher">Teacher</option>
+            <option value="guidance-counselor">Guidance Counselor</option>
+            <option value="other">Other</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend>Name</legend>
+          <label for="first-name">First name <span class="usa-additional_text">Required</span></label>
+          <input id="first-name" name="first_name" type="text" data-parsley-trigger="focusout" data-parsley-maxlength="60" required >
+
+          <!--
+          <label for="middle-name">Middle name</label>
+          <input id="middle-name" name="middle-name" type="text">
+          -->
+
+          <label for="last-name">Last name <span class="usa-additional_text">Required</span></label>
+          <input id="last-name" name="last_name" type="text" data-parsley-trigger="focusout" data-parsley-maxlength="60" required>
+        </fieldset>
+
+        <fieldset>
+          <legend>Contact Information</legend>
+          <label for="email">Email <span class="usa-additional_text">Required</span></label>
+          <input id="email" name="email" type="email" data-parsley-trigger="focusout" required>
+
+          <label for="phone-number">Phone Number</label>
+          <input id="phone-number" name="phone_number" type="text" pattern='\d{3}[\-]\d{3}[\-]\d{4}' data-parsley-trigger="focusout">
+        </fieldset>
+
+        <fieldset>
+          <legend>Mailing address</legend>
+          <label for="mailing-address-1">Street address <span class="usa-additional_text">Required</span></label>
+          <input id="mailing-address-1" name="address" type="text" data-parsley-trigger="focusout" required>
+
+          <label for="city">City <span class="usa-additional_text">Required</span></label>
+          <input id="city" name="city" type="text" data-parsley-trigger="focusout" required>
+
+            <label for="state">State <span class="usa-additional_text">Required</span></label>
+              <select id="state" name="state" type="text" minlength="1" data-parsley-trigger="focusout" required>
+                <option value="">Select...</option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+                <option value="CO">Colorado</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="DC">District of Columbia</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="HI">Hawaii</option>
+                <option value="ID">Idaho</option>
+                <option value="IL">Illinois</option>
+                <option value="IN">Indiana</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NV">Nevada</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NM">New Mexico</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="ND">North Dakota</option>
+                <option value="OH">Ohio</option>
+                <option value="OK">Oklahoma</option>
+                <option value="OR">Oregon</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="SD">South Dakota</option>
+                <option value="TN">Tennessee</option>
+                <option value="TX">Texas</option>
+                <option value="UT">Utah</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WA">Washington</option>
+                <option value="WV">West Virginia</option>
+                <option value="WI">Wisconsin</option>
+                <option value="WY">Wyoming</option>
+              </select>
+
+          <label for="zip">ZIP <span class="usa-additional_text">Required</span></label>
+          <input id="zip" name="zipcode" type="text" pattern="[\d]{5}(-[\d]{4})?" data-grouplength="5,4" data-delimiter="-" data-politespace="" data-parsley-trigger="focusout" required>
+        </fieldset>
+<!--
+        <fieldset>
+
+          <legend>Additional Information</legend>
+          <label for="currently-student-question">Are you currently a student?</label>
+          <ul class="usa-unstyled-list">
+            <li>
+              <input id="yes-choice-current-student" type="checkbox" name="choice" value="yes" tabindex="0">
+              <label for="yes-choice-current-student">Yes</label>
+            </li>
+          </ul>
+
+          <label for="current-education-level">Education Level</label>
+          <select name="options" id="current-education-level">
+            <option value="middle-school">Middle School</option>
+            <option value="high-school">High School</option>
+            <option value="undergraduate">Undergraduate</option>
+            <option value="graduate">Graduate</option>
+            <option value="other">Other</option>
+          </select>
+
+          <label for="anticipated-graduation-date">Anticipated Graduation Date</label>
+          <input id="anticipated-graduation-date" name="anticipated-graduation-date" type="text">
+
+
+
+          <label for="alumnus-question">Are you an RIT alumnus?</label>
+          <ul class="usa-unstyled-list">
+            <li>
+              <input id="yes-choice-alumnus-question" type="checkbox" name="choice" value="yes" tabindex="0">
+              <label for="yes-choice-alumnus-question">Yes</label>
+            </li>
+          </ul>
+
+          <label for="program">Program</label>
+          <input id="program" name="program" type="text">
+
+          <label for="graduation-date">Graduation Date</label>
+          <input id="graduation-date" name="graduation-date" type="text">
+
+
+          <label for="tshirt-question">Are you interested in receiving a t-shirt?</label>
+          <ul class="usa-unstyled-list">
+            <li>
+              <input id="yes-choice-tshirt-question" type="checkbox" name="choice" value="yes" tabindex="0">
+              <label for="yes-choice-tshirt-question">Yes</label>
+            </li>
+          </ul>
+
+
+          <label for="tshirt-size-selection">Select your t-shirt size</label>
+          <select name="options" id="tshirt-size-selection">
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+            <option value="xl">Extra Large</option>
+          </select>
+          -->
+
+       <!-- </fieldset>-->
+
+        <input type='submit' id='submit' name='submit'>
+
+      </form>
+    </div><!--end container div-->
+  </body>
+  <script>
+    window.Parsley.on('field:error', function() {
+      // This global callback will be called for any field that fails validation.
+      console.log('Validation failed for: ', this.$element);
+    });
+
+    //calls to DPS api to disable touch, and enable html back button navigation
+    api.setUp();
+    back.setup();
+  </script>
+
+</html>
